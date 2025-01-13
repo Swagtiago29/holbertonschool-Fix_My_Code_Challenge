@@ -1,3 +1,6 @@
+#include "lists.h"
+#include <stdlib.h>
+
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
     dlistint_t *saved_head;
@@ -35,10 +38,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
     }
     else
     {
-        // Correctly update the previous node's next pointer
         (*head)->prev->next = (*head)->next;
 
-        // If there is a next node, update its prev pointer
         if ((*head)->next != NULL)
         {
             (*head)->next->prev = (*head)->prev;
